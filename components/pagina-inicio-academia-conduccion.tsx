@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Award, Calendar, ChevronLeft, ChevronRight, Book, Shield, Home, Car, BookOpen, ParkingCircle, Menu, X } from "lucide-react"
 
 export function PaginaInicioAcademiaConduccionComponent() {
@@ -34,7 +34,7 @@ export function PaginaInicioAcademiaConduccionComponent() {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [testimonials.length])
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
